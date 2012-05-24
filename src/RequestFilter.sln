@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestFilter", "RequestFilter\RequestFilter.csproj", "{1444327E-346E-47F9-8A29-ECE7C8F3C357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestFilter.Tests", "RequestFilter.Tests\RequestFilter.Tests.csproj", "{BD590C82-29AB-4D43-9CC3-7772D4FDB35A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1444327E-346E-47F9-8A29-ECE7C8F3C357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1444327E-346E-47F9-8A29-ECE7C8F3C357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1444327E-346E-47F9-8A29-ECE7C8F3C357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1444327E-346E-47F9-8A29-ECE7C8F3C357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD590C82-29AB-4D43-9CC3-7772D4FDB35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD590C82-29AB-4D43-9CC3-7772D4FDB35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD590C82-29AB-4D43-9CC3-7772D4FDB35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD590C82-29AB-4D43-9CC3-7772D4FDB35A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
