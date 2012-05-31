@@ -2,13 +2,13 @@ using System.ComponentModel;
 using System.Diagnostics.Contracts;
 using System.Net;
 
-namespace RequestFilter
+namespace RequestFilter.Extensions
 {
     public static class IPAddressExtensions
     {
         public static uint ToUInt(this IPAddress ipAddress)
         {
-            Contract.Assert(ipAddress != null);
+            Contract.Requires(ipAddress != null);
 
             ByteConverter bConvert = new ByteConverter();
             uint ipUint = 0;

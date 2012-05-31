@@ -21,7 +21,7 @@ namespace RequestFilter.Tests.Fakes
 
         public FakeRequestBuilder(AutoMoqer moqer)
         {
-            Contract.Assert(moqer!=null);
+            Contract.Requires(moqer!=null);
             _moqer = moqer;
             _request = _moqer.GetMock<HttpRequestBase>();
             _applicationPath = "/";

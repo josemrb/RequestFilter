@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Web;
 using Machine.Specifications;
+using RequestFilter.Filters;
 
 namespace RequestFilter.Tests.FilterByIPSpecs
 {

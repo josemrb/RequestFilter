@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.Contracts;
 using System.Web;
 
-namespace RequestFilter
+namespace RequestFilter.Filters
 {
     public class FilterByUserAgent : IFilter
     {
@@ -9,19 +9,19 @@ namespace RequestFilter
 
         public FilterByUserAgent(string userAgent)
         {
-            Contract.Assert(!string.IsNullOrEmpty(userAgent));
+            Contract.Requires(!string.IsNullOrEmpty(userAgent));
             _userAgent = userAgent;
         }
 
         bool Contains(string value)
         {
-            Contract.Assert(!string.IsNullOrEmpty(value));
+            Contract.Requires(!string.IsNullOrEmpty(value));
             return value.ToLowerInvariant().Contains(_userAgent.ToLowerInvariant());
         }
 
         public bool CanProceed(HttpRequestBase request)
         {
-            Contract.Assert(request!=null);
+            Contract.Requires(request!=null);
             return Contains(request.UserAgent);
         }
     }

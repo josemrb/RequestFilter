@@ -16,7 +16,7 @@ namespace RequestFilter.Tests.Fakes
 
         public FakeResponseBuilder(AutoMoqer moqer)
         {
-            Contract.Assert(moqer != null);
+            Contract.Requires(moqer != null);
             _moqer = moqer;
             _request = _moqer.GetMock<HttpResponseBase>();
             _headers = null;

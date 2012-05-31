@@ -1,9 +1,9 @@
-﻿using System;
-using System.Diagnostics.Contracts;
+﻿using System.Diagnostics.Contracts;
 using System.Net;
 using System.Web;
+using RequestFilter.Extensions;
 
-namespace RequestFilter
+namespace RequestFilter.Filters
 {
     public class FilterByIP : IFilter
     {
@@ -12,16 +12,16 @@ namespace RequestFilter
 
         public FilterByIP(IPAddress top, IPAddress bottom)
         {
-            Contract.Assert(top != null);
-            Contract.Assert(bottom != null);
-            Contract.Assert(top.ToUInt() < bottom.ToUInt());
+            Contract.Requires(top != null);
+            Contract.Requires(bottom != null);
+            Contract.Requires(top.ToUInt() < bottom.ToUInt());
             _top = top;
             _bottom = bottom;
         }
 
         public bool CanProceed(HttpRequestBase request)
         {
-            Contract.Assert(request != null);
+            Contract.Requires(request != null);
             string userHost = request.UserHostAddress;
             IPAddress clientIP;
             if (userHost != null && IPAddress.TryParse(userHost, out clientIP))

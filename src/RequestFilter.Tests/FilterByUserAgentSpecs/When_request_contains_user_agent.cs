@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Machine.Specifications;
+using RequestFilter.Filters;
 using RequestFilter.Tests.Fakes;
 
 namespace RequestFilter.Tests.FilterByUserAgentSpecs
