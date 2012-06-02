@@ -87,6 +87,10 @@
     <Compile Include="FilterByUserAgentSpecs\FilterByUserAgentSpec.cs" />
     <Compile Include="FilterByUserAgentSpecs\When_request_contains_user_agent.cs" />
     <Compile Include="FilterByUserAgentSpecs\When_request_does_not_contains_user_agent.cs" />
+    <Compile Include="RequestProcessorSpecs\RequestProcessorSpec.cs" />
+    <Compile Include="RequestProcessorSpecs\When_the_filter_list_is_empty.cs" />
+    <Compile Include="RequestProcessorSpecs\When_the_request_can_not_proceed.cs" />
+    <Compile Include="RequestProcessorSpecs\When_the_request_can_proceed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -25,6 +25,7 @@ namespace RequestFilter.Tests.Fakes
             _moqer = moqer;
             _request = _moqer.GetMock<HttpRequestBase>();
             _applicationPath = "/";
+            // late binding is used to return the modified value
             _request.SetupGet(x => x.ApplicationPath).Returns(() => _applicationPath);
             _url = new Uri("http://localhost:8080");
             _request.SetupGet(x => x.Url).Returns(() => _url);

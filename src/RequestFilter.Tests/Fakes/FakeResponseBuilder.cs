@@ -21,8 +21,10 @@ namespace RequestFilter.Tests.Fakes
             _request = _moqer.GetMock<HttpResponseBase>();
             _headers = null;
             _request.SetupGet(x => x.Headers).Returns(() => _headers);
-            _statusCode = 200;
-            _request.SetupGet(x => x.StatusCode).Returns(() => _statusCode);
+            
+            _request.SetupProperty(x => x.Status);
+            _request.SetupProperty(x => x.StatusCode, 200);
+            _request.SetupProperty(x => x.StatusDescription, "200 OK");
         }
 
         public HttpResponseBase Build()

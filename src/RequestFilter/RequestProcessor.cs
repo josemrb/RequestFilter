@@ -15,7 +15,7 @@ namespace RequestFilter
             _filters = filters;
         }
 
-        public void Process(HttpContextWrapper context)
+        public void Process(HttpContextBase context)
         {
             Contract.Requires(context != null);
             // iterate through the list of filters
