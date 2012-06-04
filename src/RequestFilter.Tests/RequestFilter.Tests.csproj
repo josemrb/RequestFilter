@@ -83,6 +83,9 @@
     <Compile Include="FilterByIPSpecs\FilterByIPSpec.cs" />
     <Compile Include="FilterByIPSpecs\When_request_ip_is_in_range.cs" />
     <Compile Include="FilterByIPSpecs\When_request_ip_is_not_in_range.cs" />
+    <Compile Include="FilterFactorySpecs\FilterFactorySpec.cs" />
+    <Compile Include="FilterFactorySpecs\When_contructor_takes_one_argument.cs" />
+    <Compile Include="FilterFactorySpecs\When_contructor_takes_two_arguments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FilterByUserAgentSpecs\FilterByUserAgentSpec.cs" />
     <Compile Include="FilterByUserAgentSpecs\When_request_contains_user_agent.cs" />

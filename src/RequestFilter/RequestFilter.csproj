@@ -42,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
+    <Compile Include="FilterFactory.cs" />
+    <Compile Include="Configurations\RequestFilterSectionDesigner.csd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestFilterSectionDesigner.csd</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\CommaDelimitedStringCollectionExtensions.cs" />
     <Compile Include="Filters\FilterByIP.cs" />
     <Compile Include="HttpModule.cs" />
     <Compile Include="IFilter.cs" />
@@ -50,6 +56,18 @@
     <Compile Include="RequestProcessor.cs" />
     <Compile Include="Filters\FilterByUserAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configurations\RequestFilterSectionDesigner.csd">
+      <Generator>CsdFileGenerator</Generator>
+      <LastGenOutput>RequestFilterSectionDesigner.csd.cs</LastGenOutput>
+    </None>
+    <None Include="Configurations\RequestFilterSectionDesigner.csd.diagram">
+      <DependentUpon>RequestFilterSectionDesigner.csd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,30 +8,33 @@ namespace RequestFilter
 {
     public class HttpModule : IHttpModule
     {
-        private HttpApplication _context;
+        private HttpApplication _app;
         private RequestProcessor _processor;
+        private FilterFactory _filterFactory;
+        private IList<IFilter> _filters;
 
-        public void Init(HttpApplication context)
+        public void Init(HttpApplication application)
         {
-            _context = context;
-            _context.BeginRequest += ContextOnBeginRequest;
-            InitProcessor();
+            Init();
+            _app = application;
+            _app.BeginRequest += AppOnBeginRequest;
         }
 
-        private void InitProcessor()
+        private void Init()
         {
-
-            _processor = new RequestProcessor(null);
+            _filterFactory = new FilterFactory();
+            _filters = _filterFactory.BuildFiltersFromConfig();
+            _processor = new RequestProcessor(_filters);
         }
 
-        private void ContextOnBeginRequest(object sender, EventArgs eventArgs)
+        private void AppOnBeginRequest(object sender, EventArgs eventArgs)
         {
-            
+            _processor.Process(new HttpContextWrapper(_app.Context));
         }
 
         public void Dispose()
         {
-            _context.BeginRequest -= ContextOnBeginRequest;
+            _app.BeginRequest -= AppOnBeginRequest;
         }
     }
 }
