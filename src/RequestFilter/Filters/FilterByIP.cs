@@ -10,6 +10,9 @@ namespace RequestFilter.Filters
         private readonly IPAddress _top;
         private readonly IPAddress _bottom;
 
+        public FilterByIP(string top, string bottom)
+            : this(IPAddress.Parse(top), IPAddress.Parse(bottom)) { }
+
         public FilterByIP(IPAddress top, IPAddress bottom)
         {
             Contract.Requires(top != null);

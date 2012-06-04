@@ -23,7 +23,7 @@ namespace RequestFilter.Configurations
         /// The XML name of the RequestFilterSection Configuration Section.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        internal const string RequestFilterSectionSectionName = "requestFilterSection";
+        internal const string RequestFilterSectionSectionName = "requestFilter";
         
         /// <summary>
         /// Gets the RequestFilterSection instance.
@@ -108,7 +108,7 @@ namespace RequestFilter.Configurations
     /// <summary>
     /// A collection of Filter instances.
     /// </summary>
-    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::RequestFilter.Configurations.Filter), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate, AddItemName=global::RequestFilter.Configurations.Filters.FilterPropertyName)]
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::RequestFilter.Configurations.Filter), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap, AddItemName=global::RequestFilter.Configurations.Filters.FilterPropertyName)]
     public partial class Filters : global::System.Configuration.ConfigurationElementCollection
     {
         
@@ -130,7 +130,7 @@ namespace RequestFilter.Configurations
         {
             get
             {
-                return global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate;
+                return global::System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap;
             }
         }
         
@@ -185,34 +185,6 @@ namespace RequestFilter.Configurations
         }
         #endregion
         
-        #region Indexer
-        /// <summary>
-        /// Gets the <see cref="global::RequestFilter.Configurations.Filter"/> at the specified index.
-        /// </summary>
-        /// <param name="index">The index of the <see cref="global::RequestFilter.Configurations.Filter"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        public global::RequestFilter.Configurations.Filter this[int index]
-        {
-            get
-            {
-                return ((global::RequestFilter.Configurations.Filter)(base.BaseGet(index)));
-            }
-        }
-        
-        /// <summary>
-        /// Gets the <see cref="global::RequestFilter.Configurations.Filter"/> with the specified key.
-        /// </summary>
-        /// <param name="key">The key of the <see cref="global::RequestFilter.Configurations.Filter"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        public global::RequestFilter.Configurations.Filter this[object key]
-        {
-            get
-            {
-                return ((global::RequestFilter.Configurations.Filter)(base.BaseGet(key)));
-            }
-        }
-        #endregion
-        
         #region Add
         /// <summary>
         /// Adds the specified <see cref="global::RequestFilter.Configurations.Filter"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
@@ -234,28 +206,6 @@ namespace RequestFilter.Configurations
         public void Remove(global::RequestFilter.Configurations.Filter filter)
         {
             base.BaseRemove(this.GetElementKey(filter));
-        }
-        #endregion
-        
-        #region GetItem
-        /// <summary>
-        /// Gets the <see cref="global::RequestFilter.Configurations.Filter"/> at the specified index.
-        /// </summary>
-        /// <param name="index">The index of the <see cref="global::RequestFilter.Configurations.Filter"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        public global::RequestFilter.Configurations.Filter GetItemAt(int index)
-        {
-            return ((global::RequestFilter.Configurations.Filter)(base.BaseGet(index)));
-        }
-        
-        /// <summary>
-        /// Gets the <see cref="global::RequestFilter.Configurations.Filter"/> with the specified key.
-        /// </summary>
-        /// <param name="key">The key of the <see cref="global::RequestFilter.Configurations.Filter"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        public global::RequestFilter.Configurations.Filter GetItemByKey(string key)
-        {
-            return ((global::RequestFilter.Configurations.Filter)(base.BaseGet(((object)(key)))));
         }
         #endregion
         

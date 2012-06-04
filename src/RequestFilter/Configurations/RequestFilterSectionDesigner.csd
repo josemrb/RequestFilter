@@ -13,7 +13,7 @@
     <externalType name="CommaDelimitedStringCollection" namespace="System.Configuration" />
   </typeDefinitions>
   <configurationElements>
-    <configurationSection name="RequestFilterSection" codeGenOptions="Singleton, XmlnsProperty" xmlSectionName="requestFilterSection">
+    <configurationSection name="RequestFilterSection" codeGenOptions="Singleton, XmlnsProperty" xmlSectionName="requestFilter">
       <elementProperties>
         <elementProperty name="Filters" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="filters" isReadOnly="false">
           <type>
@@ -22,7 +22,7 @@
         </elementProperty>
       </elementProperties>
     </configurationSection>
-    <configurationElementCollection name="Filters" xmlItemName="filter" codeGenOptions="Indexer, AddMethod, RemoveMethod, GetItemMethods">
+    <configurationElementCollection name="Filters" collectionType="AddRemoveClearMap" xmlItemName="filter" codeGenOptions="AddMethod, RemoveMethod">
       <itemType>
         <configurationElementMoniker name="/295c771f-ca2a-4954-90b0-315830ef7218/Filter" />
       </itemType>

@@ -35,7 +35,7 @@ namespace RequestFilter
             Contract.Requires(response != null);
             response.StatusCode = (int)HttpStatusCode.Forbidden;
             response.StatusDescription = "403 Forbidden";
-            response.Close();
+            response.End();
         }
     }
 }
