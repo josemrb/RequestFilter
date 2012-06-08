@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web;
+using RequestFilter.Configurations;
 
 namespace RequestFilter
 {
@@ -17,12 +16,13 @@ namespace RequestFilter
         {
             Init();
             _app = application;
-            _app.BeginRequest += AppOnBeginRequest;
+            if (_filters.Count > 0)
+                _app.BeginRequest += AppOnBeginRequest;
         }
 
         private void Init()
         {
-            _filterFactory = new FilterFactory();
+            _filterFactory = new FilterFactory(RequestFilterSection.Instance);
             _filters = _filterFactory.BuildFiltersFromConfig();
             _processor = new RequestProcessor(_filters);
         }
@@ -34,7 +34,8 @@ namespace RequestFilter
 
         public void Dispose()
         {
-            _app.BeginRequest -= AppOnBeginRequest;
+            if (_filters.Count > 0)
+                _app.BeginRequest -= AppOnBeginRequest;
         }
     }
 }

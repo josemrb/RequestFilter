@@ -18,16 +18,12 @@ namespace RequestFilter
         public void Process(HttpContextBase context)
         {
             Contract.Requires(context != null);
-            // iterate through the list of filters
+            // iterate through the list of filters and apply OR to the result
+            bool result = false;
             foreach (IFilter filter in _filters)
-            {
-                if (!filter.CanProceed(context.Request)) // find if the request can not proceed
-                {
-                    // deny request and return
-                    Deny(context.Response);
-                    return;
-                }
-            }
+                result = result || filter.CanProceed(context.Request);
+            if (!result)
+                Deny(context.Response);
         }
 
         public void Deny(HttpResponseBase response)
